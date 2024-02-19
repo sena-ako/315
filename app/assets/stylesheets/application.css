@@ -1,0 +1,80 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ * {
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
+      Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  }
+
+  header {
+    background-color: #FF8856;
+    height: 80px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.header-left {
+  flex: 1;
+  width: 40px;
+  border-radius: 5%;
+  padding-left: 15px;
+}
+
+.logo-image{
+  height: 40px;
+  width: 40px;
+}
+
+header a {
+ color: #FFFAF0; 
+ text-decoration: none; 
+ margin-left: 5PX;
+}
+
+.header-center {
+  flex: 5; /* タイトルを中央に配置 */
+  text-align: center;
+  color: #FFFAF0;
+ margin-left: 20px;
+}
+
+.header-right {
+  text-align: right;
+  margin-right: 10px;
+  display: flex;
+}
+.header-right p{
+  margin: 5px;
+}
+
+footer {
+    color: #336633;
+    height: 10px;
+    background-color: #AAAAAA;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    justify-content: flex-end;
+  }

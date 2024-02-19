@@ -1,0 +1,9 @@
+
+<div class="image-container">
+<%= image_tag 'image3.png', class:"back-image" %>
+<%= @random_topic.contents %>
+    
+    <input type="button" value="もう一回" onclick="window.location.reload();" />
+
+    <%= link_to 'トップページにもどる', topics_path %>
+</div>

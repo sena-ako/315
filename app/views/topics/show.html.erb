@@ -1,0 +1,21 @@
+
+<h3>話題の詳細</h3>
+<div class="topic">
+  <p><%= @topics.contents %></p>
+  <p><%= @topics.created_at %></p>
+</div>
+
+<% @topics.tags.each do |tag| %>
+  <span><%= tag.name %></span>
+<% end %>
+
+ <details>
+    <summary>削除</summary>
+    本当に削除しますか？ <%= button_to "はい", topic_path(@topics.id), method: :delete%>
+</details>
+
+<%= button_to 'いいね', topic_likes_path(@topics) %>
+<%= flash[:notice] %>
+
+<%= link_to "戻る", topics_path %>
+

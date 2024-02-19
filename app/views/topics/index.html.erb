@@ -1,0 +1,57 @@
+
+<%= stylesheet_link_tag 'index', :media => "all" %>
+
+
+<div class="topics-container">
+
+  <p>学校、サークル、バイト先、飲み会etc.<br />
+  初対面の人やあまり親しくない人と話すとき、話題に困ることはありませんか？<br />
+  そんな時におすすめの話題をみんなから募集しています！<br />
+  はなしのたねを使って、話に花を咲かせよう！</p>
+</div>
+  
+<div class="main-container">
+  <div class="left-container">
+    <h3>投稿一覧</h3>
+
+    <div class="order-container">
+      <%= link_to '新着順', topics_path(latest: "true") %>
+      <%= link_to '古い順', topics_path(old: "true") %>
+      <%= link_to 'いいね順', topics_path(most_favorited: "true") %>
+    </div>
+
+    <% @topics.each do |t| %>
+      <div class="topic">
+      <div class="main-box">
+      <div class="left-container"><%= t.contents %></div>
+      <div class="right-container">
+        <%= t.likes.count %>
+      </div>
+      </div>
+      <p class="time"><%= t.created_at %></p>
+    </div>
+      <%= link_to "詳細へ", topic_path(t.id) %>
+    <% end %>
+  </div>
+
+
+  <div class="right-container">
+    <div class="search-container">
+      <h4 class="right-aligned-h4">投稿を検索</h4>
+      <%= form_tag({controller:"topics",action:"index"}, method: :get) do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag '検索する' %>
+      <% end %>
+    </div>
+
+    <div class="tag-container">
+      <%= form_tag({controller:"topics",action:"index"}, method: :get) do %>
+        <% Tag.all.each do |t| %>
+            <li><%= check_box :tag_ids, t.name %><%= t.name %></li>
+        <% end %>
+        <%= submit_tag 'タグを検索' %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

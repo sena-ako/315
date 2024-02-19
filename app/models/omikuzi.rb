@@ -1,0 +1,2 @@
+class Omikuzi < ApplicationRecord
+end

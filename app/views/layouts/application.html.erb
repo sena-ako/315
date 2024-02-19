@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hanashinotane</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header class="header">
+  <div class="header-left">
+
+    <%= link_to topics_path do %>
+      <%= image_tag 'image1.png', class:"logo-image" %>
+    <% end %>
+
+  </div>
+  <div class="header-center">
+  <h2>はなしのたね</h2>
+  </div>
+  <div class="header-right">
+   <p><%= link_to "おみくじ", omikuzis_top_path %></p>
+   <p><%= link_to "新規投稿へ", new_topic_path %></p>
+  </div>
+  </header>
+<main>
+    <%= yield %>
+  </main>
+  <footer>
+  <p>Copyright © GeekSalon All Rights Reserved.</p>
+  </footer>
+  </body>
+</html>
